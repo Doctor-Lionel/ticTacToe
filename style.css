@@ -1,0 +1,25 @@
+.fr {
+    width: 30vmin;
+    height: 30vmin;
+    margin: 2px;
+    background-color: black;
+    font-family: "segoe print";
+    font-size: 15vmin;
+    user-select: none;
+}
+
+.fc {
+    flex-direction: row;
+    width: max-content;
+    background-color: red;
+}
+
+main {
+    display: grid;
+    place-items: center;
+}
+
+body {
+    /* overflow: hidden; */
+    height: 100dvh;
+}
