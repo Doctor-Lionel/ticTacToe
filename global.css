@@ -482,7 +482,7 @@ main {
     background-color: white;
     border: 2px solid var(--blue);
     border-radius: 2rem;
-    padding: 5rem 2rem 2rem 2rem;
+    padding:2rem;
     position: relative;
     display: flex;
     flex-direction: column;
