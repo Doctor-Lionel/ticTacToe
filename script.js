@@ -4,9 +4,10 @@ let player2 = '';
 player1_wins = localStorage.getItem('player1_wins');
 player2_wins = localStorage.getItem('player2_wins');
 
-localStorage.setItem(`player1_wins`, player1_wins);
-localStorage.setItem(`player2_wins`, player2_wins);
+localStorage.setItem(`player1_wins`, (player1_wins == "NaN" || "null") ? (0) : player1_wins);
+localStorage.setItem(`player2_wins`, (player2_wins == "NaN" || "null") ? (0) : player2_wins);
 
+console.log(localStorage)
 
 const possibilities = ['012', '345', '678', '036', '147', '258', '048', '246'];
 let state = 1;
@@ -48,7 +49,7 @@ function logic(x, z) {
     for (let i = 0; i < 8; i++) {
         if (x.includes(possibilities[i][0]) && x.includes(possibilities[i][1]) && x.includes(possibilities[i][2])) {
             // console.log(z);
-            z = parseInt(z) + 1;
+            z = parseInt((z == "NaN" || "null") ? (0) : z) + 1;
             localStorage.setItem(`player${state}_wins`, z);
             z = localStorage.getItem(`player${state}_wins`);
             popup(`Player ${state} wins <br>Scores: <span style='--player:#999900'>${localStorage.getItem(`player1_wins`)}</span> - <span style='--player:#009999'>${localStorage.getItem(`player2_wins`)}</span>`);
@@ -64,7 +65,7 @@ function logic(x, z) {
 
 boxes.forEach((element) => {
     element.addEventListener('click', function () {
-        // console.log(localStorage)
+        console.log(localStorage);
         if ((element.innerHTML == '')) {
             if (state == 1) {
                 element.style.color = '#ffff00';
